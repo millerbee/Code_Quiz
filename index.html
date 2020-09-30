@@ -11,25 +11,36 @@
 
 <body>
   
-  <div class="container">  
-      <h1 id ="start-title" class="hide">Play the Code Quiz!</h1>
+  <div class="container"> 
+    <h1 id= "titlePAge">Web Development Quiz!</h1>
+   
+    <hr style="margin-bottom: 20px">
         <div id="question-container" class="hide">
-        <div id="question">Question</div>
+          
+        <div id="question"></div>
 
-        <div id ="answer-btns" class="btn-group">
-          <button class="btn">Answer 1</button>
-          <button class="btn">Answer 2</button>
-          <button class="btn">Answer 3</button>
-          <button class="btn">Answer 4</button>
+        <div  class="btn-group">
+          <button id="btnA"></button>
+          <button id="btnB"></button>
+          <button id="btnC"></button>
+          <button id="btnD"></button>
+          <div id="result"></div>
         </div>
+        <div class = "timer"></div>
       </div>
 
         <div class=main-btns>
-        <button id="start" class="start-btn btn">Start</button> 
-        <button id ="next" class ="next-btn btn hide">Next</button> 
-        </div>
-      </div>   
+         
+        <button id="start-btn" class="start-btn btn">Start Quiz</button> 
+        <button id ="submit-btn" class ="submit-btn btn hide">Submit</button> 
+        </div>  
+        
+        <footer id="timer">
+        <hr style="margin-top: 20px">
+      </footer>
 </div>
-<script src="script.js"></script>
+        
+      
+<script type="text/javascript" src="script.js"></script>
 </body>
 </html>
