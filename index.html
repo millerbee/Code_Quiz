@@ -15,7 +15,7 @@
   
   <div class="container"> 
     <h1 id= "titlePAge">Play the Javascript Quiz! 
-      <h4> Answer within the time limit, if you get one wrong you lose time.  good luck!</h4>
+      <h4> Answer within the time limit. <br>If you get one wrong you lose time.  good luck!</h4>
    
     <hr style="margin-bottom: 20px"></hr>
         <div id="question-container" class="hide">
@@ -28,17 +28,20 @@
           <button id="btnC" class="answerButton"></button>
           <button id="btnD" class="answerButton"></button>
           <div id="result"  class="results"></div>
+          
         </div>
 
-        <div class = "timer"></div>
+        <!--<div class = "timer"></div> -->
+        <div id = "gameOver"></div>
        </div>
 
         <div class=main-btns>         
         <button id="start-btn" class="start-btn btn">Start Quiz</button> 
-        <button id ="submit-btn" class ="submit-btn btn hide">Submit</button> 
+        <button id ="submit-btn" class ="submit-btn btn hide">Get Score</button> 
         </div>  
         
         <footer id="timer">
+
         <hr style="margin-top: 20px"></hr>
       </footer>
     </div>  

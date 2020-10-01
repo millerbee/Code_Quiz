@@ -1,9 +1,14 @@
-
+//questions from w3schools.com
 var questions = [
     {
       title: "Commonly used data types DO NOT include:",
       options: ["strings", "booleans", "alerts", "numbers"],
       answer: "alerts"
+    },
+    {
+      title: "Arrays are noted by:",
+      options: ["square brackets []", "squiggly {}", "parentheses()", "pipes ||" ],
+      answer: "square brackets []"
     },
     {
       title: "Inside which HTML element do we put the JavaScript?",
@@ -27,8 +32,8 @@ var questions = [
     },
     {
       title: "How do you write an IF statement in JavaScript?",
-      options: ["if i = 5 or else", "if i = 5 then", "if i == 5 then", "if(i == 5)"],
-      answer: "if(i == 5)"
+      options: ["if i = 6 or else", "if i = 6 then", "if i == 6 then", "if(i == 6)"],
+      answer: "if(i == 6)"
     },
     {
       title: "How does a while loop start?",
@@ -50,7 +55,9 @@ var timer = document.getElementById("timer");
 var answerButton  = document.querySelector(".answerButton");
 var currentQuestionArr = 0;
 var userAnswer = "";
+var gameOver = document.getElementById("gameOver");
 var message = document.getElementById("result");
+var getScore = document.getElementById("submit-btn")
 
 // start the process
 startButton.addEventListener("click", startQuiz);   
@@ -79,6 +86,8 @@ function startClock() {
 
         else if (currentQuestionArr === questions.length) {
             clearInterval(timeInterval);
+            gameOver.textContent ="You finished!"
+            quizOver();
         }
     },  1000)
     return (score)
@@ -110,7 +119,7 @@ document.getElementById("btnA").addEventListener("click", function() {
     }
     else {
         message.textContent ="Wrong!"
-        timeLeft -= 5;
+        timeLeft -= 10;
     }
     currentQuestionArr++;
     displayQuestion();
@@ -124,7 +133,7 @@ document.getElementById("btnA").addEventListener("click", function() {
  }
     else {
      message.textContent ="Wrong!"
-     timeLeft -= 5;
+     timeLeft -= 10;
  }
  currentQuestionArr++;
  displayQuestion();
@@ -137,7 +146,7 @@ document.getElementById("btnC").addEventListener("click", function() {
 }
 else {
    message.textContent ="Wrong!"
-   timeLeft -= 5;
+   timeLeft -= 10;
 }
 currentQuestionArr++;
 displayQuestion();
@@ -157,7 +166,11 @@ displayQuestion();
 })
 
 
-  
+function quizOver()  {
+  document.getElementById("submit-btn").style.display = "block";
+  //var getScore = document.createElement('submit-btn');
+  //getScore.setAttribute('class', 'get-score');
+}
 
 
 
