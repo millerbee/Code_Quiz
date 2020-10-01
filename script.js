@@ -143,8 +143,18 @@ currentQuestionArr++;
 displayQuestion();
 })
 
-
-
+document.getElementById("btnD").addEventListener("click", function() {
+if (questions[currentQuestionArr]["options"][2] ===questions[currentQuestionArr]["answer"]) {
+  message.textContent ="Correct!";
+  score++;
+}
+else {
+message.textContent ="Wrong!"
+timeLeft -= 5;
+}
+currentQuestionArr++;
+displayQuestion();
+})
 
 
   
