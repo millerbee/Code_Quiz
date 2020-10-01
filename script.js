@@ -102,7 +102,7 @@ function displayQuestion() {
         //checkAnswer();
 }
 
-//check the users answer against the correct answer
+//check the users answer against the correct answer - I wanted one section to loop through instead of each button but I kept getting errors. still working on...
 document.getElementById("btnA").addEventListener("click", function() {
        if (questions[currentQuestionArr]["options"][0] ===questions[currentQuestionArr]["answer"]) {
             message.textContent ="Correct!";
