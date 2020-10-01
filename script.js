@@ -41,7 +41,7 @@ var questions = [
       answer: "while (i <= 10)"
     }
   ]
-
+//setting up the variables
 var score =0;
 var timeLeft = 60;
 var startButton = document.getElementById("start-btn")
@@ -111,7 +111,7 @@ function displayQuestion() {
         //checkAnswer();
 }
 
-//check the users answer against the correct answer - I wanted one section to loop through instead of each button but I kept getting errors. still working on...
+//check the users answer against the correct answer - I wanted one section to loop through instead of each button but I kept getting errors. still working on it...
 document.getElementById("btnA").addEventListener("click", function() {
        if (questions[currentQuestionArr]["options"][0] ===questions[currentQuestionArr]["answer"]) {
             message.textContent ="Correct!";
@@ -125,7 +125,7 @@ document.getElementById("btnA").addEventListener("click", function() {
     displayQuestion();
   })
 
-
+//if the answer is correc the score will increment
   document.getElementById("btnB").addEventListener("click", function()  {
     if (questions[currentQuestionArr]["options"][1] ===questions[currentQuestionArr]["answer"]) {
          message.textContent ="Correct!";
@@ -138,7 +138,7 @@ document.getElementById("btnA").addEventListener("click", function() {
  currentQuestionArr++;
  displayQuestion();
 })
-
+// here I set whether an answer is correct or not
 document.getElementById("btnC").addEventListener("click", function() {
   if (questions[currentQuestionArr]["options"][2] ===questions[currentQuestionArr]["answer"]) {
        message.textContent ="Correct!";
@@ -165,11 +165,10 @@ currentQuestionArr++;
 displayQuestion();
 })
 
-
+// this will display the get score button and return the score and allow the user to enter their intials to save as a highscore
 function quizOver()  {
   document.getElementById("submit-btn").style.display = "block";
-  //var getScore = document.createElement('submit-btn');
-  //getScore.setAttribute('class', 'get-score');
+
 }
 
 
