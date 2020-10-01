@@ -47,12 +47,15 @@ var answerB = document.getElementById("btnB");
 var answerC = document.getElementById("btnC");
 var answerD = document.getElementById("btnD");
 var timer = document.getElementById("timer");
+var answerButton  = document.querySelector(".answerButton");
 var currentQuestionArr = 0;
+var userAnswer = "";
+var message = document.getElementById("result");
 
 // start the process
 startButton.addEventListener("click", startQuiz);   
 
-//start the quiz display and hid the start button and title, then call start clock and display question functions
+//start the quiz card and hid the start button and title, then call start clock and display question functions
 function startQuiz() {
 
     startButton.classList.add("hide")
@@ -62,6 +65,7 @@ function startQuiz() {
     displayQuestion()
 }
 
+// start the clock when the question card loads and when time runs out let the user know and return their score.
 function startClock() {
     var timeInterval = setInterval(function () {
         timeLeft--;
@@ -83,6 +87,7 @@ function startClock() {
 
 
 function displayQuestion() {
+
     if (currentQuestionArr === questions.length) {
         quizOver();
     }
@@ -93,9 +98,56 @@ function displayQuestion() {
         answerC.textContent = questions[currentQuestionArr]["options"][2];
         answerD.textContent = questions[currentQuestionArr]["options"][3];
     }
+       // answerButton.addEventListener("click", selectAnswer)
+        //checkAnswer();
 }
 
+//check the users answer against the correct answer
+document.getElementById("btnA").addEventListener("click", function() {
+       if (questions[currentQuestionArr]["options"][0] ===questions[currentQuestionArr]["answer"]) {
+            message.textContent ="Correct!";
+            score++;
+    }
+    else {
+        message.textContent ="Wrong!"
+        timeLeft -= 5;
+    }
+    currentQuestionArr++;
+    displayQuestion();
+  })
 
+
+  document.getElementById("btnB").addEventListener("click", function()  {
+    if (questions[currentQuestionArr]["options"][1] ===questions[currentQuestionArr]["answer"]) {
+         message.textContent ="Correct!";
+         score++;
+ }
+    else {
+     message.textContent ="Wrong!"
+     timeLeft -= 5;
+ }
+ currentQuestionArr++;
+ displayQuestion();
+})
+
+document.getElementById("btnC").addEventListener("click", function() {
+  if (questions[currentQuestionArr]["options"][2] ===questions[currentQuestionArr]["answer"]) {
+       message.textContent ="Correct!";
+       score++;
+}
+else {
+   message.textContent ="Wrong!"
+   timeLeft -= 5;
+}
+currentQuestionArr++;
+displayQuestion();
+})
+
+
+
+
+
+  
 
 
 

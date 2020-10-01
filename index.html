@@ -2,8 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> <!--using this meta for responsive-->
     <link href="https://fonts.googleapis.com/css2?family=Epilogue&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="./style.css">
     
     <title>Code Quiz</title>
@@ -14,31 +16,32 @@
   <div class="container"> 
     <h1 id= "titlePAge">Web Development Quiz!</h1>
    
-    <hr style="margin-bottom: 20px">
+    <hr style="margin-bottom: 20px"></hr>
         <div id="question-container" class="hide">
           
         <div id="question"></div>
-
+        
         <div  class="btn-group">
-          <button id="btnA"></button>
-          <button id="btnB"></button>
-          <button id="btnC"></button>
-          <button id="btnD"></button>
-          <div id="result"></div>
+          <button id="btnA" class="answerButton"></button>
+          <button id="btnB" class="answerButton"></button>
+          <button id="btnC" class="answerButton"></button>
+          <button id="btnD" class="answerButton"></button>
+          <div id="result"  class="results"></div>
         </div>
-        <div class = "timer"></div>
-      </div>
 
-        <div class=main-btns>
-         
+        <div class = "timer"></div>
+       </div>
+
+        <div class=main-btns>         
         <button id="start-btn" class="start-btn btn">Start Quiz</button> 
         <button id ="submit-btn" class ="submit-btn btn hide">Submit</button> 
         </div>  
         
         <footer id="timer">
-        <hr style="margin-top: 20px">
+        <hr style="margin-top: 20px"></hr>
       </footer>
-</div>
+    </div>  
+ </div>
         
       
 <script type="text/javascript" src="script.js"></script>
