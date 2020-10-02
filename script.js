@@ -7,18 +7,18 @@ var questions = [
     },
     {
       title: "Arrays are noted by:",
-      options: ["square brackets []", "squiggly {}", "parentheses()", "pipes ||" ],
+      options: ["square brackets []", "curly {}", "parentheses()", "pipes ||" ],
       answer: "square brackets []"
     },
     {
       title: "Inside which HTML element do we put the JavaScript?",
       options: ["<javascript>", "<scriptor>", "<js>", "<script>"],
-      answer: "<js>"
+      answer: "<script>"
     },
     {
-      title: "Where should you insert JavaScript?",
-      options: ["the <head>", "the bottom of the <body>", "anywhere in the HTML", "anywhere in the stylesheet"],
-      answer: "the bottom of the <body>"
+      title: "Which of these in not a logical operator?",
+      options: [" ! ", " & ", " || ", " && "],
+      answer: " & "
     },
     {
       title: "How do you write 'Hello World' in an alert box?",
@@ -36,8 +36,8 @@ var questions = [
       answer: "if(i == 6)"
     },
     {
-      title: "How does a while loop start?",
-      options: ["while i between 0 and 10", "while (i <= 10; i++)", "while (i <= 10)", "while i <= 10"],
+      title: "How does a “while” loop start?",
+      options: ["while i=(1 <> 10)", "while (i <= 10)", "while i=1 to 10", "while (i <=10; i++)"],
       answer: "while (i <= 10)"
     }
   ]
@@ -57,7 +57,8 @@ var currentQuestionArr = 0;
 var userAnswer = "";
 var gameOver = document.getElementById("gameOver");
 var message = document.getElementById("result");
-var getScore = document.getElementById("submit-btn")
+var getScore = document.getElementById("submit-btn");
+var finalScore = document.getElementById("yourScore");
 
 // start the process
 startButton.addEventListener("click", startQuiz);   
@@ -78,7 +79,7 @@ function startClock() {
         timeLeft--;
         timer.textContent = "Timer: " + timeLeft;
 
-        if (timeLeft === 0) {
+        if (timeLeft === 0) {   //there is a bug here, if user at 9 seconds and 10 are taken away from incorrect question. also when alert pops up you'll see the timer at 1 instead of 0
             clearInterval(timeInterval),
             alert("Game over! You ran out of time!")
             lastQuestion();
@@ -86,7 +87,6 @@ function startClock() {
 
         else if (currentQuestionArr === questions.length) {
             clearInterval(timeInterval);
-            gameOver.textContent ="You finished!"
             quizOver();
         }
     },  1000)
@@ -153,13 +153,13 @@ displayQuestion();
 })
 
 document.getElementById("btnD").addEventListener("click", function() {
-if (questions[currentQuestionArr]["options"][2] ===questions[currentQuestionArr]["answer"]) {
+if (questions[currentQuestionArr]["options"][3] ===questions[currentQuestionArr]["answer"]) {
   message.textContent ="Correct!";
   score++;
 }
 else {
 message.textContent ="Wrong!"
-timeLeft -= 5;
+timeLeft -= 10;
 }
 currentQuestionArr++;
 displayQuestion();
@@ -167,7 +167,18 @@ displayQuestion();
 
 // this will display the get score button and return the score and allow the user to enter their intials to save as a highscore
 function quizOver()  {
-  document.getElementById("submit-btn").style.display = "block";
+  // for( let element of document.getElementsByClassName(".btn-group")){
+  //   element.style.display="none";
+      
+ // document.getElementById("submit-btn").style.display = "block";
+    
+    var yourTime =parseInt(timeLeft);
+    timeLeft = yourTime;
+    var yourScore = score;
+    yourTime = yourTime - 60; 
+   // percent = yourScore * .100;
+    //npercent = percent.toFixed();
+    finalScore.textContent="Your score: " + yourScore;
 
 }
 

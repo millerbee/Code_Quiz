@@ -15,14 +15,14 @@
   
   <div class="container">   <!--setting the main container pager to invite user to take the quiz-->
     <h1 id= "titlePAge">Play the Javascript Quiz! 
-      <h4> Answer within the time limit. If you get one wrong you lose time.  good luck!</h4>  <!--this will stay on each page-->
+      <h4> Answer within the time limit. If you get one wrong you lose time.  Good luck!</h4>  <!--this will stay on each page-->
    
     <hr style="margin-bottom: 20px"></hr>                <!--this is make the page responsive-->
         <div id="question-container" class="hide">
           
         <div id="question"></div>
         
-        <div  class="btn-group">                         <!--setting up the buttons to hold answers-->
+        <div  class="btn-group">                      <!--setting up the buttons to hold answers-->
           <button id="btnA" class="answerButton"></button>
           <button id="btnB" class="answerButton"></button>
           <button id="btnC" class="answerButton"></button>
@@ -33,13 +33,20 @@
 
       
         <div id = "gameOver"></div>
-       </div>
+        </div>
 
         <div class=main-btns>         <!--these buttons are bigger and near the botton, they will hide or appear when trigged in JS-->
         <button id="start-btn" class="start-btn btn">Start Quiz</button> 
         <button id ="submit-btn" class ="submit-btn btn hide">Get Score</button> 
         </div>  
         
+        <div id = score-container>
+          <h3 id = "yourScore"></h3>
+
+        </div>
+
+
+
         <footer id="timer">
 
         <hr style="margin-top: 20px"></hr>
