@@ -7,9 +7,9 @@
   
   body {
     background-color: #dde9bb;
-    padding: 100px;
+    padding: 0;
     margin: 0;
-    display: center;
+    display: flex;
     width: 100vw;
     height: 100vh;
     justify-content: center;
@@ -18,9 +18,8 @@
   }
 
   .container {
-    align-self: center;
     width:  600px;
-    max-width: 80%;
+   
     background-color: white;
     border-style: solid;
     border-width: 5px;
@@ -28,36 +27,36 @@
     border-radius: 15px;
     box-shadow: 0 0 10px 2px;
     padding: 10px;
+    
   }
   
   h1 {
-    margin-top: 35px;
+    margin-top: 30px;
   }
 
   h4 {
     font-size: 20px;
   }
 
-.btn-group {
+  .btn-group  {
     display: grid;
-    margin: 0 auto;
-    grid-template-columns: repeat(2, auto);
+    margin-left: 30%;
     gap: 5px;
-   
 
-}
+} 
+
 
 #btnA, #btnB, #btnC, #btnD {
-    border: 1px solid;
-    width:  60%;
-    font-size:  20px;
-    margin: 10px 10px 10px 0px;
-    background-color: rgb(134, 96, 129);
-    border-radius: 10px;
-    padding: 10px 10px 5px 5px;
-    color: white;
-  
-  }
+  border: 1px solid;
+  width:  60%;
+  font-size:  20px;
+  margin: 10px 10px 10px 0px;
+  background-color: rgb(134, 96, 129);
+  border-radius: 10px;
+  padding: 5px 5px 5px 5px;
+  color: white;
+
+}
 
 
 #btnA:hover, #btnB:hover, #btnC:hover, #btnD:hover { 
@@ -114,7 +113,7 @@
  .submit-btn {
   background-color: rgb(64, 102, 77);
   font-size: 30px;
-  margin-top: 40px;
+  margin-top: 30px;
   cursor: pointer;
   color: white;
   border: 1px solid rgb(85, 84, 84);
@@ -123,4 +122,16 @@
 
  .score-container {
    text-align: center;
+  
+ }
+
+ #result {
+   text-align: center;
+   font-weight: bold;
+   margin-left: 65px;
+   color: rgb(41, 98, 221);
+ }
+
+ #yourScore {
+   margin-bottom: 30px;
  }
