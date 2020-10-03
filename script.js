@@ -79,7 +79,7 @@ function startClock() {
         timeLeft--;
         timer.textContent = "Timer: " + timeLeft;
 
-        if (timeLeft === 0) {   //there is a bug here, if user at 9 seconds and 10 are taken away from incorrect question. also when alert pops up you'll see the timer at 1 instead of 0
+        if (timeLeft === 0 || timeLeft < 0) {   //there is a bug here, if user at 9 seconds and 10 are taken away from incorrect question. also when alert pops up you'll see the timer at 1 instead of 0
             clearInterval(timeInterval),
             alert("Game over! You ran out of time!")
             lastQuestion();
